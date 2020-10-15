@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  <div class="banner" style="background-image: url(/img/Banner.JPG); height:450px; background-size:contain; background-repeat: no-repeat">
+    <div style="width:40%">
+      {{ content }}
+    </div>
+  </div>
+  
+  <img src="img/Feet.JPG" height="200"/>
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Latest Posts" }}</h2>
+    <table>
+      <tr class="post-list">
+        {%- for post in site.posts limit:3 -%}
+        <td>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if post.thumbnail -%}
+            <p><img src={{ post.thumbnail }} height="200" width="200"></p>
+          {%- endif -%}
+        </td>
+        {%- endfor -%}
+      </tr>
+    </table>
+
+  {%- endif -%}
+
+</div>

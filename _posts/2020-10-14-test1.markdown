@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Test Post 1!"
+date:   2020-10-14 15:32:12 -0700
+categories: test
+thumbnail: /img/posts/test1/Kachapuri.JPG
+---
+Here's a test post with content
+
+![Khachapuri](/img/posts/test1/Kachapuri.JPG)
